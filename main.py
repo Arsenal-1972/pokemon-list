@@ -2,7 +2,7 @@
 import csv
 
 pokemons = []
-
+pokemons_2 = []
 # https://www.w3schools.com/python/python_file_handling.asp
 # https://www.w3schools.in/python/file-handling
 with open('pokemon.csv', newline='') as csv_file:
@@ -22,29 +22,53 @@ while True:
     print("4. Search by text in name")
     print("5. Search by length of name")
     print("6. Exit")
+    print("")
+    print("")
 
-    choice = input("Enter your choice (1-6): ")
+    choice = input("Enter your choice (1-8): ")
 
     if choice == '1':
+        number = int(input("Get pokemon by sequence number"))
+        print(pokemons[number - 1])
         # https://www.w3schools.com/python/python_lists_access.asp
         pass
     elif choice == '2':
+        pokemons.sort()
+        print(pokemons)
         # https://www.w3schools.com/python/python_lists_sort.asp
         pass
     elif choice == '3':
+        pokemons.sort(reverse = True)
+        print(pokemons)
         # https://www.w3schools.com/python/python_lists_sort.asp
         pass
     elif choice == '4':
+        y = str(input("Search by text in name"))
+        for x in pokemons:
+            if y in x:
+             pokemons_2.append(x)
+        print(pokemons_2)
         # https://www.w3schools.com/python/python_lists_comprehension.asp
         # https://www.w3schools.com/python/ref_string_startswith.asp
         pass
     elif choice == '5':
+        z = int(input("Search by length of name"))
+        for x in pokemons:
+            if len(x) == z:
+             pokemons_2.append(x)
+        print(pokemons_2)
         # https://www.w3schools.com/python/python_lists_comprehension.asp
         pass
-    elif choice == '6':
+    elif choice == "6":
+        print(pokemons[0:10])
+        pass 
+    elif choice == "7":
+        print(pokemons[-10:])
+        pass 
+    elif choice == '8':
         print("Exiting")
         break
     else:
-        print("Invalid choice, choose from 1 to 6")
+        print("Invalid choice, choose from 1 to 8")
 
     print("==========================")
