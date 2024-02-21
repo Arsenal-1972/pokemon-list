@@ -21,11 +21,12 @@ while True:
     print("3. Sort by Z-A")
     print("4. Search by text in name")
     print("5. Search by length of name")
-    print("6. Exit")
-    print("")
-    print("")
+    print("6. Show 10 pokemons from the list's begining")
+    print("7. Show 10 pokemons from the list's bottom")
+    print("8. ")
+    print("9. Exit")
 
-    choice = input("Enter your choice (1-8): ")
+    choice = input("Enter your choice (1-9): ")
 
     if choice == '1':
         number = int(input("Get pokemon by sequence number"))
@@ -65,7 +66,21 @@ while True:
     elif choice == "7":
         print(pokemons[-10:])
         pass 
-    elif choice == '8':
+     
+    
+    elif choice == "8":
+        start = 0
+        print(pokemons[start:start])
+        while g == "n":
+         g = str(input("Would you like to see 10 more pokemons, if yes then insert n, if no then insert q"))
+         if g == "n":
+            print(pokemons[start:start+10])
+         elif g == "q":
+            print("skip")    
+
+
+        pass
+    elif choice == '9':
         print("Exiting")
         break
     else:
